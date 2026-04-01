@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>إلى أغلى أم - هدية ثلاثية الأبعاد</title>
+    <style>
+        :root { --deep-purple: #4b0082; --white: #ffffff; }
+        body { margin: 0; background: #0f0518; color: var(--deep-purple); font-family: 'Tajawal', sans-serif; text-align: center; overflow-x: hidden; }
+        
+        .hero { height: 60vh; display: flex; flex-direction: column; justify-content: center; align-items: center; color: var(--white); }
+        h1 { font-size: 4rem; text-shadow: 0 0 20px rgba(255,255,255,0.3); }
+
+        /* حاوية البطاقات */
+        .cards-container { display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; padding: 50px; perspective: 1000px; }
+
+        /* البطاقات الثلاثية الأبعاد */
+        .card { width: 250px; height: 350px; position: relative; transform-style: preserve-3d; transition: transform 0.8s; cursor: pointer; }
+        .card:hover { transform: rotateY(180deg); }
+        .card-face { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        
+        .front { background: var(--white); border: 3px solid var(--deep-purple); font-size: 1.5rem; font-weight: bold; }
+        .back { background: var(--deep-purple); color: white; transform: rotateY(180deg); padding: 20px; font-size: 1.2rem; }
+
+        /* الورود في الأسفل */
+        .flower-section { font-size: 5rem; margin-top: 50px; animation: bloom 3s infinite alternate; }
+        @keyframes bloom { from { transform: scale(0.8); } to { transform: scale(1.2); } }
+    </style>
+</head>
+<body>
+
+    <section class="hero">
+        <h1 style="color: var(--white);">إلى أعظم أم في العالم ❤️</h1>
+        <p style="font-size: 1.5rem;">باقات حب من قلوبنا جميعاً</p>
+    </section>
+
+    <div class="cards-container">
+        <!-- تكرار البطاقات -->
+        <div class="card">
+            <div class="card-face front">الأب <br> 👨</div>
+            <div class="card-face back">شكراً لأنكِ شريكة العمر وأجمل قدر أهداني إياه الله.</div>
+        </div>
+        <div class="card">
+            <div class="card-face front">الابن <br> 👦</div>
+            <div class="card-face back">أنتِ بطلي الدائم ومصدر قوتي في هذه الحياة.</div>
+        </div>
+        <div class="card">
+            <div class="card-face front">الابنة <br> 👧</div>
+            <div class="card-face back">أنتِ صديقتي قبل أن تكوني أمي، ملجئي الوحيد.</div>
+        </div>
+        <div class="card">
+            <div class="card-face front">الزوج <br> 💍</div>
+            <div class="card-face back">عشرة عمرٍ مليئة بالحب، كل عام وأنتِ بخير يا نبضي.</div>
+        </div>
+        <div class="card">
+            <div class="card-face front">الأم (الجدة) <br> 👵</div>
+            <div class="card-face back">أنتِ أصل الجمال والخير الذي غرس فينا كل هذا الحب.</div>
+        </div>
+    </div>
+
+    <div class="flower-section">🌹✨🌷</div>
+
+    <script>
+        // تأثير إضافي عند التحويم لإظهار التفاعل
+        document.querySelectorAll('.card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                console.log("القلوب تتحدث!");
+            });
+        });
+    </script>
+</body>
+</html>
